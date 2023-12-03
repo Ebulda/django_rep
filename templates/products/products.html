@@ -7,12 +7,15 @@
             <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
+    <h1 class="card-title">{{ product.title }}</h1>
     <p class="card-text">{{product.content }}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Rate: {{ product.rate }}</li>
-    <li class="list-group-item">created at: {{ product.created_at}}</li>
+    <li class="list-group-item"><h5>Rate: {{ product.rate }}</h5></li>
+      <li class="list-group-item"><h6>created at: {{ product.created_at}}</h6></li>
+      {% for category in product.category.all %}
+          <a href="/category/" class="btn btn-primary">#{{ category.text }}</a>
+          {% endfor %}
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">More</a>
