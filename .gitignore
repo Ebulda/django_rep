@@ -6,3 +6,6 @@ pyvenv.cfg
 /.idea
 /venv
 git
+/static
+/staticfiles
+media/

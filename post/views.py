@@ -22,4 +22,7 @@ def category_view(request):
         return render(request, 'products/category.html', {"category": category})
 
 
-
+def product_detail_view(request, prod_id):
+    if request.method == 'GET':
+        product = Product.objects.get(id=prod_id)
+        return render(request, 'products/detail.html', {'product': product})

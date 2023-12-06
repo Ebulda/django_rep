@@ -19,4 +19,9 @@ class Product(models.Model):
         return f"{self.id}: {self.title}"
 
 
+class Review(models.Model):
+    product = models.ForeignKey('post.Product', on_delete=models.CASCADE, related_name='review')
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
+#добавить ревью в хтмл детального отображения через цикл!!!!
