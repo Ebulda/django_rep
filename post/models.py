@@ -4,6 +4,12 @@ from django.db import models
 class Category(models.Model):
     text = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        verbose_name_plural = "Category"
+
 
 class Product(models.Model):
     image = models.ImageField(upload_to="posts", null=True, blank=True)
@@ -12,7 +18,7 @@ class Product(models.Model):
     rate = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(
-        'post.Category', blank=True, related_name='products'
+        'post.Category', blank=True, related_name='category'
     )
 
     def __str__(self) -> str:
@@ -24,4 +30,3 @@ class Review(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
-#добавить ревью в хтмл детального отображения через цикл!!!!

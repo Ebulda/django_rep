@@ -8,4 +8,4 @@ pyvenv.cfg
 git
 /static
 /staticfiles
-media/
+/media
