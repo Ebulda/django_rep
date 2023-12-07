@@ -10,7 +10,11 @@
 
     {% for category in product.category.all %}
         <a href="/category/" class="btn btn-primary">#{{ category.text }}</a>
+
     {% endfor %}
+    <p>
+    <a href="/create_reviews/{{ product.id }}/" class="submit-row">Create Review{{ ReviewCreateForm }}</a>
+    </p>
 
     <h3>Reviews:</h3>
     {% for review in product.review.all %}

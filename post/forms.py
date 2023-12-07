@@ -4,11 +4,10 @@ from post.models import Category, Review
 
 
 class ProductCreateForm(forms.Form):
-    name = forms.CharField(max_length=200)
+    title = forms.CharField(max_length=200)
     content = forms.CharField(widget=forms.Textarea())
     image = forms.ImageField(required=False)
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="------", required=False,
-                                      initial=None)
+    rate = forms.IntegerField(min_value=1, max_value=5)
 
     def clean_content(self):
         cleaned_data = super().clean()

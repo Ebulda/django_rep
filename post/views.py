@@ -28,7 +28,6 @@ def product_detail_view(request, prod_id):
         return render(request, 'products/detail.html', {'product': product})
 
 
-@login_required
 def product_create(request):
     if request.method == 'GET':
         return render(request, 'products/create_prod.html', {'form': ProductCreateForm})
@@ -41,7 +40,6 @@ def product_create(request):
     return render(request, 'products/create_prod.html', {'form': ProductCreateForm(request.POST, request.FILES)})
 
 
-@login_required
 def category_create(request):
     if request.method == 'POST':
         form = CategoryCreateForm(request.POST)
@@ -56,7 +54,6 @@ def category_create(request):
     return render(request, 'products/create_category.html', context)
 
 
-@login_required
 def review_create(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 

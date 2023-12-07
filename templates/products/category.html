@@ -5,4 +5,7 @@
     {% for i in category %}
           <a href="category/" class="btn btn-primary">#{{ i.text }}</a>
     {% endfor %}
+    <p>
+    <a href="/create_categories/" class="button">Create Category{{ CategoryCreateForm }}</a>
+    </p>
 {% endblock %}
