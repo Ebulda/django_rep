@@ -1,11 +1,15 @@
 {% extends 'layouts/index.html' %}
 
 {% block content %}
-    <h2>Category</h2>
-    {% for i in category %}
-          <a href="category/" class="btn btn-primary">#{{ i.text }}</a>
-    {% endfor %}
+<div class="container my-5">
+    <h2 class="text-white">Category</h2>
+    <div class="d-flex flex-wrap">
+        {% for i in category %}
+            <a href="category/" class="btn btn-light m-2">#{{ i.text }}</a>
+        {% endfor %}
+    </div>
     <p>
-    <a href="/create_categories/" class="button">Create Category{{ CategoryCreateForm }}</a>
+        <a href="/create_categories/" class="btn btn-secondary mt-3">Create Category</a>
     </p>
+</div>
 {% endblock %}
